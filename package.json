@@ -1,0 +1,29 @@
+{
+  "name": "cryptoantelope",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "knex migrate:latest && node index.js",
+    "dev": "nodemon index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "knex migrate:latest",
+    "unmigrate": "knex migrate:rollback",
+    "seed": "knex seed:run "
+  },
+  "keywords": [],
+  "author": "cryptoantelope",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "knex": "^0.20.13",
+    "morgan": "^1.10.0",
+    "pg": "^8.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "sqlite3": "^4.1.1"
+  }
+}
