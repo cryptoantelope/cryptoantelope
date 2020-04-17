@@ -2,7 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 const path = require('path')
 const app = express()
-const {NODE_PORT} = require('./config')
+const {PORT} = require('./config')
 
 const api = require('./api')
 const link = require('./routes/link')
