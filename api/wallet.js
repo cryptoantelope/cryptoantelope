@@ -55,7 +55,7 @@ const etherium = async (req, res) => {
         const url = `https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${ETH_API_KEY}`
         const ethRes = await axios.get(url)
 
-        if(ethRes.message === 'OK')
+        if(ethRes.data.message === 'OK')
             return res.json({balance: (Number(ethRes.data.result)/(10**18)).toFixed(8)})
         
         return res.status(500).json({error: true})
