@@ -21,6 +21,6 @@ app.get('/*', (req, res) => {
     res.sendFile(path.join(`${__dirname}/cryptoantelope-front/build/index.html`))
 })
 
-app.listen(NODE_PORT, () => {
+app.listen(PORT, () => {
     console.log('Server running...')
 })
