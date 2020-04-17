@@ -5,7 +5,7 @@ exports.up = async knex => {
       table.string('name', 20).notNullable()
       table.string('type', 100)
       table.text('description')
-      table.timestamps()
+      table.timestamps(true, true)
 
       table.unique('name')
   })

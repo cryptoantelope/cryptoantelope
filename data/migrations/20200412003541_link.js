@@ -6,7 +6,7 @@ exports.up = async knex => {
         table.string('url', 100).notNullable()
         table.string('redirect', 100).notNullable()
         table.integer('accountId').notNullable()
-        table.timestamps()
+        table.timestamps(true, true)
 
         table.foreign('accountId').references('account.id')
     })

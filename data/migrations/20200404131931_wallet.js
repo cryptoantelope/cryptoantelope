@@ -5,7 +5,7 @@ exports.up = async knex => {
       table.string('chain', 10).notNullable()
       table.string('address', 45).notNullable()
       table.integer('accountId').notNullable()
-      table.timestamps()
+      table.timestamps(true, true)
 
       table.foreign('accountId').references('account.id')
       table.unique(['accountId', 'chain', 'address'])
