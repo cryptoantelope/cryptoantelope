@@ -46,8 +46,12 @@ const dogecoin = async (req, res) => {
 const etherium = async (req, res) => {
     const {address} = req.params
 
-    try {
+    if(!ETH_API_KEY) {
+        console.error('Set up ETH_API_KEY')
+        return res.status(500).json({error: true})
+    }
 
+    try {
         const url = `https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${ETH_API_KEY}`
         const ethRes = await axios.get(url)
 
